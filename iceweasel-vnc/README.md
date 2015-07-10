@@ -14,7 +14,7 @@ Alternately you can build the image yourself.
 
 ```bash
 git clone https://github.com/r0mdau/docker-iceweasel.git
-cd docker-iceweasel
+cd docker-images/iceweasel-vnc/
 docker build -t r0mdau/iceweasel .
 ```
 # Quick Start

@@ -13,8 +13,8 @@ docker pull r0mdau/gitlab:latest
 Alternately you can build the image yourself.
 
 ```bash
-git clone https://github.com/r0mdau/docker-gitlab.git
-cd docker-gitlab
+git clone https://github.com/r0mdau/docker-images.git
+cd docker-images/gitlab/
 docker build -t r0mdau/gitlab .
 ```
 # Quick Start
