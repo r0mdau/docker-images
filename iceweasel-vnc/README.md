@@ -13,7 +13,7 @@ docker pull r0mdau/iceweasel:latest
 Alternately you can build the image yourself.
 
 ```bash
-git clone https://github.com/r0mdau/docker-iceweasel.git
+git clone https://github.com/r0mdau/docker-images.git
 cd docker-images/iceweasel-vnc/
 docker build -t r0mdau/iceweasel .
 ```
