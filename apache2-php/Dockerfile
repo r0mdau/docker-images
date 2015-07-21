@@ -15,5 +15,6 @@ php5-gd \
 php5-mcrypt \
 php5-memcache \
 php-apc
+RUN rm -rf /var/lib/apt/lists/*
 RUN /etc/init.d/apache2 restart
 CMD ["apache2ctl",  "-D", "FOREGROUND"]

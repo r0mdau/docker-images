@@ -33,5 +33,5 @@ Dockerfile example :
 FROM r0mdau/apache2-php:latest
 RUN apt-get update
 RUN apt-get install -y YOURPACKAGE
-CMD ["apache2ctl",  "-D", "FOREGROUND"]
+RUN rm -rf /var/lib/apt/lists/*
 ```
