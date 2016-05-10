@@ -1,20 +1,24 @@
 FROM debian:jessie
-MAINTAINER romain.dauby@orange.com
 
-RUN apt-get update
-RUN apt-get install -y apache2
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
-RUN a2enmod headers && a2enmod rewrite
-RUN apt-get install -y \
-php5 \
-php5-dev \
-php5-mysql \
-php5-curl \
-php5-ldap \
-php5-gd \
-php5-mcrypt \
-php5-memcache \
-php-apc
-RUN rm -rf /var/lib/apt/lists/*
-RUN /etc/init.d/apache2 restart
+MAINTAINER Romain Dauby "romain.dauby@orange.com"
+
+RUN apt-get update \
+    && apt-get install --no-install-recommends --no-install-suggests -y \
+        apache2 \
+        php5 \
+        php5-dev \
+        php5-mysql \
+        php5-curl \
+        php5-ldap \
+        php5-gd \
+        php5-mcrypt \
+        php5-memcache \
+        php-apc \
+    && echo "ServerName localhost" >> /etc/apache2/apache2.conf \
+    && a2enmod headers && a2enmod rewrite \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN ln -sf /dev/stdout /var/log/apache2/access.log \
+    && ln -sf /dev/stderr /var/log/apache2/error.log
+
 CMD ["apache2ctl",  "-D", "FOREGROUND"]
