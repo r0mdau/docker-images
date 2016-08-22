@@ -1,5 +1,4 @@
 FROM ubuntu:14.04
-MAINTAINER romain.dauby@gmail.com
 
 # Install required packages
 RUN apt-get update -q \

@@ -1,5 +1,4 @@
 FROM r0mdau/jessie:base
-MAINTAINER romain.dauby@gmail.com
 RUN apt-get update
 RUN apt-get install -y x11vnc xvfb iceweasel
 RUN mkdir ~/.vnc
