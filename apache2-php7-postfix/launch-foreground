@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+rm -f /var/run/apache2/apache2.pid
+rm -f /var/spool/postfix/pid/master.pid
+
+/etc/init.d/postfix start
+exec apache2ctl -D FOREGROUND
